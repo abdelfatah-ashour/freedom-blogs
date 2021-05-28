@@ -1,0 +1,150 @@
+@import "./variables.sass"
+.navbarUI
+    background-color : $firstColor
+
+.navbarBrand
+    padding : 0.3rem 0
+    color : $fourColor
+    font-family: $fontFamilyBrand
+    font-size : 1.5rem
+    text-decoration : none
+    &:hover
+        color : $fiveColor
+        transition : all 0.3s
+
+.nav-item
+    border-left : 2px solid transparent
+    &:hover 
+        border-left-color : $fiveColor !important
+        transition : all 0.5s
+    a
+        color : $fourColor
+        &:hover 
+            color : $fiveColor
+            transition : all .3s
+        @media (max-width: 576px)
+            &:hover 
+                transform : translateX(1rem)
+                color : $fiveColor
+                transition : all .3s
+        
+
+.activePath
+    a
+        color : $fiveColor !important
+
+.toggleIcon
+    border : 0 !important
+    outline : 0 !important
+    background-color : transparent !important
+    @media (min-width: 992px)
+        display : none
+    span
+        color : $fourColor
+        font-size : 2rem
+
+.collapse
+    @media (max-width: 576px)
+        flex-direction : column
+    @media (max-width: 768px)
+        flex-direction : column
+    @media (max-width: 992px)
+        flex-direction : column
+    .listNavbar
+        .nav-item
+            margin-left: 0.5rem !important
+            font-size : 1rem  !important
+            @media (max-width: 576px)
+                margin-bottom: 1rem
+            @media (max-width: 768px)
+                margin-bottom: 1rem
+            @media (max-width: 992px)
+                margin-bottom: 1rem
+            &:hover
+                padding-left : .75rem !important
+                border-left : 2px solid $fourColor !important
+                transition : all .4s !important
+            a
+                color : $fiveColor
+                @media (max-width: 576px)
+                    margin-bottom: 5rem !important
+                    font-size : 0.8rem !important
+                @media (max-width: 768px)
+                    margin-bottom: .5rem !important
+                    font-size : 0.9rem !important
+                @media (max-width: 992px)
+                    margin-bottom: .5rem !important
+                    font-size : 1rem !important
+                color : $fourColor
+                text-decoration : none
+
+.listNotification
+    list-style : none
+    display : flex
+    flex-direction : row
+    flex-wrap : wrap
+    span
+        font-size : 1rem
+        border-radius : .5rem
+        margin-left: 0.5rem
+        padding: .2rem
+    li
+        width: 100%
+    .dropdown-toggle
+        padding: 0.5rem
+        &::after
+            display: inline-block;
+            margin: 0
+            vertical-align: 0;
+            border : 0
+
+.dropdown-menu-notification
+    position: absolute
+    left: 0
+    z-index: 1000
+    display: none
+    min-width: 20rem
+    padding: .3rem
+    margin: 0
+    font-size: 1rem
+    color: #212529
+    text-align: left
+    list-style: none
+    background-color: #fff
+    border: 1px solid rgba(0,0,0,.15)
+    border-radius: .25rem
+    transform: translate(-45%, 10%)
+    @media (max-width: 576px)
+        transform : none
+    @media (max-width: 768px)
+        transform : none
+    @media (max-width: 992px)
+        transform : none
+
+.one-notification
+    color : $firstColor
+    padding : .3rem .15rem
+    border-left : 2px solid transparent
+    &:hover
+        border-left-color : $fiveColor
+        cursor : pointer
+        color : $fiveColor
+        transition : all .3s
+    span
+        border-radius: .5rem;
+        padding: 0.1rem 0.15rem;
+        small
+            font-size : 80%
+        b 
+            font-weight : bold
+
+.navbar-toggler
+    border : none !important
+    outline : none !important
+    background-color : transparent !important
+    &:focus
+        border : 0 !important
+        outline : 0 !important
+    span
+        color : $fourColor
+        font-size : 1.5rem

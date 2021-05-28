@@ -1,0 +1,107 @@
+.headingBody {
+  width: 100%;
+  min-height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headingBody ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 0 1rem;
+  padding-top: .2rem;
+}
+
+.headingBody ul li {
+  margin-left: .5rem;
+}
+
+.createNewArticle {
+  font-size: 1rem;
+  padding: .3rem;
+}
+
+@media (max-width: 576px) {
+  .createNewArticle {
+    font-size: 0.6rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .createNewArticle {
+    font-size: 0.8rem !important;
+  }
+}
+
+.createNewArticle:Hover {
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.createNewArticle span {
+  color: #ef8354;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.signupFree {
+  background-color: #3db738;
+  padding: .15rem .3rem;
+  border-radius: 0.3rem;
+}
+
+@media (max-width: 576px) {
+  .signupFree {
+    font-size: 0.6rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .signupFree {
+    font-size: 0.8rem !important;
+  }
+}
+
+.signupFree:Hover {
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.signupFree a {
+  color: #232323;
+  text-decoration: none;
+}
+
+.logout:hover {
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+/*# sourceMappingURL=headingBody.module.css.map */

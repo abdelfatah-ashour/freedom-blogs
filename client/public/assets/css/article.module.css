@@ -1,0 +1,128 @@
+.article {
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: .25rem;
+}
+
+.containerArticle {
+  height: 85%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border-radius: .25rem;
+}
+
+.containerImageArticle {
+  height: 100%;
+  width: 35%;
+  position: relative;
+  overflow: hidden;
+  background-color: orange;
+  border-radius: .25rem;
+}
+
+@media (max-width: 768px) {
+  .containerImageArticle {
+    width: 100% !important;
+    height: 58% !important;
+  }
+}
+
+.containerImageArticle img {
+  height: 100%;
+}
+
+.headArticle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .2rem .5rem;
+  text-align: center;
+  min-height: 20%;
+  word-break: break-all;
+  background-color: #ffffff;
+  margin: 0;
+  border: 2px solid #888;
+  border-top: 0;
+  border-radius: .3rem;
+}
+
+@media (max-width: 768px) {
+  .headArticle {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .headArticle {
+    font-size: 95%;
+  }
+}
+
+.containerContentArticle {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  overflow: hidden !important;
+  border-radius: .25rem;
+}
+
+@media (max-width: 768px) {
+  .containerContentArticle {
+    width: 100% !important;
+    height: 38% !important;
+  }
+}
+
+.containerContentArticle p {
+  height: 75%;
+  font-size: .8rem;
+  text-align: center;
+  margin: auto;
+}
+
+.linkSeeMore {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+/*# sourceMappingURL=article.module.css.map */

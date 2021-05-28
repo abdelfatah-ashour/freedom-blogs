@@ -1,0 +1,48 @@
+.Comment {
+  width: 60%;
+  min-height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ef8354;
+}
+
+.iconComment {
+  width: 10%;
+  height: 4rem;
+  overflow: hidden;
+  text-align: center;
+  padding-top: .5rem;
+  font-size: 1.2rem;
+}
+
+.containerComment {
+  margin-left: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+}
+
+.deleteComment {
+  width: 5%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.deleteComment:hover {
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+/*# sourceMappingURL=comment.module.css.map */

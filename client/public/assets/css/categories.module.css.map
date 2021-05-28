@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,UAAU,EAAG,KAAK;EAClB,KAAK,EAAE,IAAI;EACX,OAAO,EAAG,IAAI;EACd,cAAc,EAAG,MAAM;EACvB,WAAW,EAAG,MAAM;CAAG;;AAE3B,AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,IAAI;EACX,UAAU,EAAG,IAAI;EACjB,OAAO,EAAG,IAAI;EACd,YAAY,EAAG,GAAG;EAClB,eAAe,EAAG,MAAM;CAAG",
+    "sources": [
+        "categories.module.sass"
+    ],
+    "names": [],
+    "file": "categories.module.css"
+}

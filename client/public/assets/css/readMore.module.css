@@ -1,0 +1,145 @@
+.seeMore {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.containerImage {
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.containerImage img {
+  border-radius: .3rem;
+  height: 80%;
+}
+
+.containerInfo {
+  margin: 3rem 0;
+}
+
+.containerInfo ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+}
+
+.containerInfo ul li {
+  line-height: 2.2;
+  color: #2d3142;
+  font-weight: bold;
+}
+
+.containerContentArticle {
+  width: 100%;
+  border-bottom: 2px solid #ef8354;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.containerContentArticle h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ce4002;
+}
+
+.containerContentArticle p {
+  width: 75%;
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+
+.makeComment {
+  min-height: 120px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: Center;
+      -ms-flex-align: Center;
+          align-items: Center;
+  margin: 2rem 0;
+}
+
+.makeComment div {
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: Center;
+      -ms-flex-align: Center;
+          align-items: Center;
+}
+
+.makeComment div input {
+  width: 90%;
+  height: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ef8354;
+  outline: 0;
+  -webkit-box-shadow: 0 0 6px #ef8354;
+          box-shadow: 0 0 6px #ef8354;
+}
+
+.makeComment div span {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.makeComment div span:hover {
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.listComments {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=readMore.module.css.map */

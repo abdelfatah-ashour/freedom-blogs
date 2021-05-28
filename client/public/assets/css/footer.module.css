@@ -1,0 +1,97 @@
+.footer {
+  width: 100%;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #2d3142;
+}
+
+.containerMenuList {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .containerMenuList {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerMenuList {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .containerMenuList {
+    width: 100% !important;
+  }
+}
+
+.containerMenuList label {
+  color: #ffffff;
+  height: 2rem;
+}
+
+.MenuList {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.MenuList .lineList {
+  width: 50%;
+  text-align: center;
+  line-height: 2.2;
+}
+
+.MenuList .lineList a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.MenuList .lineList a:hover {
+  padding-bottom: 0.5rem;
+  text-decoration: underline;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+/*# sourceMappingURL=footer.module.css.map */

@@ -1,0 +1,80 @@
+@import "./variables.sass"
+
+.article
+    height: 50vh
+    width: 100%
+    overflow : hidden
+    display : flex
+    flex-direction : row
+    justify-content : space-around
+    align-items : center
+    border-radius : .25rem
+
+.containerArticle
+    height: 85%
+    width: 100%
+    display : flex
+    flex-direction : row
+    flex-wrap: wrap
+    justify-content : space-between
+    align-items : center
+    position : relative
+    border-radius : .25rem
+
+.containerImageArticle
+    height: 100%
+    width: 35%
+    position : relative
+    overflow : hidden
+    background-color : orange
+    border-radius : .25rem
+    overflow:hidden
+    @media (max-width: 768px)
+        width: 100% !important
+        height: 58% !important
+    img
+        height: 100%
+
+.headArticle
+    position : absolute
+    bottom: 0
+    left: 0
+    right: 0
+    padding : .2rem .5rem
+    text-align : center
+    min-height : 20%
+    word-break: break-all
+    background-color : $fourColor
+    margin: 0
+    border : 2px solid #888
+    border-top : 0
+    border-radius : .3rem
+    @media (max-width: 768px)
+        font-size : 90%
+    @media (max-width: 992px)
+        font-size : 95%
+
+.containerContentArticle
+    position : relative
+    width: 60%
+    height: 100%
+    display : flex
+    flex-direction : row
+    background-color : $fourColor
+    padding: 0.2rem 0.5rem
+    overflow: hidden !important
+    border-radius : .25rem
+    @media (max-width: 768px)
+        width: 100% !important
+        height: 38% !important
+    p
+        height: 75%
+        font-size : .8rem
+        text-align : center
+        margin : auto
+
+.linkSeeMore
+    position : absolute
+    bottom: 0
+    right: 0
+    transform : translateY(-100%)

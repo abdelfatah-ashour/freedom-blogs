@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  min-height: 100vh;
+}
+
+h3, h6 {
+  font-family: "Righteous", cursive;
+}
+
+h1 {
+  font-family: "Audiowide", cursive !important;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+/*# sourceMappingURL=global.css.map */

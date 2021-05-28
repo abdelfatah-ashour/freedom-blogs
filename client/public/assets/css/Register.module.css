@@ -1,0 +1,113 @@
+.Register {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Register section {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 576px) {
+  .Register section {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Register section {
+    width: 95%;
+  }
+}
+
+.ourForm {
+  width: 45%;
+  height: 100%;
+}
+
+.ourForm label {
+  padding: .5rem 0;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  font-size: .8rem;
+}
+
+.ourForm input {
+  width: 100%;
+  min-height: 2.5rem;
+  outline: 0;
+  border: 0;
+  border-radius: .3rem;
+  margin-bottom: 1.5rem;
+  -webkit-box-shadow: 0px 0px 6px #f1f1f1;
+          box-shadow: 0px 0px 6px #f1f1f1;
+  border: 0;
+  border-bottom: 2px solid #eaeaea;
+  padding: 0 .3rem;
+  font-size: .8rem;
+}
+
+.ourForm input:hover {
+  border-bottom-color: #888;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+@media (max-width: 576px) {
+  .ourForm {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ourForm {
+    width: 100%;
+  }
+}
+
+.contentSubmit {
+  width: 100%;
+}
+
+.contentSubmit button {
+  padding: .5rem;
+  outline: 0;
+  border: 2px solid #eaeaea;
+  background-color: #f1f1f1;
+  border-radius: .3rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contentSubmit span {
+  width: 100%;
+}
+/*# sourceMappingURL=Register.module.css.map */
