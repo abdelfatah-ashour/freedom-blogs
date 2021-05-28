@@ -7,7 +7,7 @@ import { getJSON, remove } from 'js-cookie';
 import ToastContainer from './ToastContainer';
 import axios from '../utilities/defaultAxios';
 import { useRouter } from 'next/router';
-
+import { toastSuccess } from '../components/toast';
 export default function HeadBody() {
     const Router = useRouter();
     const { AuthUser, setIsAuth } = useContext(AuthContext);
@@ -16,7 +16,7 @@ export default function HeadBody() {
     const handleLogout = async () => {
         await axios
             .get('/api/auth/logout')
-            .then(() => {
+            .then((resp) => {
                 setIsAuth({
                     isLogin: false,
                     isAuth: false,
@@ -27,6 +27,7 @@ export default function HeadBody() {
                 });
                 remove('pi');
                 remove('c_user');
+                toastSuccess(resp.data.message);
                 setTimeout(() => {
                     Router.push('/');
                 }, 2000);

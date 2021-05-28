@@ -1,13 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable sort-imports */
-import React from "react";
-import Style from "../../public/assets/css/comment.module.css";
+import React from 'react';
+import Style from '../../public/assets/css/comment.module.css';
 
-export default function Comment(props) {
-    // const [comments, setComments] = useState([]);
-    const {OneComment, articleId,onDelete} = props;
-
-
+export default function Comment({ OneComment, articleId, onDelete }) {
     return (
         <React.Fragment>
             <div className={Style.Comment}>
@@ -19,7 +15,7 @@ export default function Comment(props) {
                 <span
                     className={Style.deleteComment}
                     onClick={() => onDelete(articleId, OneComment._id)}>
-					❌
+                    ❌
                 </span>
             </div>
         </React.Fragment>

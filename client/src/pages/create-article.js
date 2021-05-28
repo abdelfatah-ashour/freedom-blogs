@@ -1,30 +1,28 @@
 /* eslint-disable sort-imports */
-import React, { useState } from "react";
-import Layout from "../components/Layout";
-import axios from "../utilities/defaultAxios";
-import GenerateArticle from "../components/GenerateArticle";
-import PreviewArticle from "../components/PreviewArticle";
-import { checkCreateArticle } from "../utilities/checkCreateArticle";
-import Style from "../../public/assets/css/createNewArticle.module.css";
-import { toastError, toastSuccess } from "../components/toast";
-import { ProtectRoutes } from "../utilities/ProtectRoutes";
-import {useRouter} from "next/router";
-
-
+import React, { useState } from 'react';
+import Layout from '../components/Layout';
+import axios from '../utilities/defaultAxios';
+import GenerateArticle from '../components/GenerateArticle';
+import PreviewArticle from '../components/PreviewArticle';
+import { checkCreateArticle } from '../utilities/checkCreateArticle';
+import Style from '../../public/assets/css/createNewArticle.module.css';
+import { toastError, toastSuccess, toastWarn } from '../components/toast';
+import { ProtectRoutes } from '../utilities/ProtectRoutes';
+import { useRouter } from 'next/router';
 
 export default function createArticle() {
     const Router = useRouter();
-    const [message, setMessage] = useState("");
-    const [headOfArticle, setHeadOfArticle] = useState("");
+    const [message, setMessage] = useState('');
+    const [headOfArticle, setHeadOfArticle] = useState('');
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState(false);
-    const [Category, setCategory] = useState("DEFAULT");
+    const [Category, setCategory] = useState('DEFAULT');
 
     const handleOnChange = () => {
-        const prevParagraph = document.querySelector("#prevParagraph");
-        const textArea = document.querySelector("#textArea").value;
-        textArea.replace("/\n/g", "<br/>");
-        textArea.concat(55, "<br/>");
+        const prevParagraph = document.querySelector('#prevParagraph');
+        const textArea = document.querySelector('#textArea').value;
+        textArea.replace('/\n/g', '<br/>');
+        textArea.concat(55, '<br/>');
         prevParagraph.innerHTML = textArea;
         setMessage(textArea);
     };
@@ -34,7 +32,7 @@ export default function createArticle() {
     };
 
     const handleFile = e => {
-        const imageArticle = document.querySelector("#imageArticle");
+        const imageArticle = document.querySelector('#imageArticle');
         imageArticle.src = window.URL.createObjectURL(e.target.files[0]);
         setFile(e.target.files[0]);
     };
@@ -50,29 +48,33 @@ export default function createArticle() {
     const handleSubmit = async e => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("headArticle", headOfArticle);
-        formData.append("contentArticle", message);
-        formData.append("imageArticle", file);
-        formData.append("category", Category);
+        formData.append('headArticle', headOfArticle);
+        formData.append('contentArticle', message);
+        formData.append('imageArticle', file);
+        formData.append('category', Category);
 
         const result = await checkCreateArticle({
             headArticle: headOfArticle,
             contentArticle: message,
-            imageArticle: file ? file.name : "",
-            category: Category === "DEFAULT" ? "" : Category,
+            imageArticle: file ? file.name : '',
+            category: Category === 'DEFAULT' ? '' : Category,
         });
 
         if (result) {
             await axios
-                .post("/api/article/create-article", formData)
+                .post('/api/article/create-article', formData)
                 .then(({ data }) => {
                     toastSuccess(data.message);
                     setTimeout(() => {
-                        Router.push("/");
+                        Router.push('/');
                     }, 2000);
                 })
                 .catch(error => {
-                    if (error) toastError(error.response.data.message);
+                    if (!error.response) {
+                        toastWarn(error.message);
+                    } else {
+                        toastError(error.response.data.message);
+                    }
                 });
         }
     };
@@ -116,9 +118,9 @@ export async function getServerSideProps({ req }) {
     const Protected = ProtectRoutes(req);
     if (!Protected) {
         return {
-            redirect :{
-                destination : "/login"
-            }
+            redirect: {
+                destination: '/login',
+            },
         };
     }
 

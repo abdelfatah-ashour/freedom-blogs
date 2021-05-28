@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import InputFormRegister from '../components/InputFormRegister';
 import { checkLogin } from '../utilities/checkLogin';
-import { toast } from 'react-toastify';
+import { toastSuccess, toastError, toastWarn } from '../components/toast';
 import Layout from '../components/Layout';
 import axios from '../utilities/defaultAxios';
 import Style from '../../public/assets/css/Register.module.css';
@@ -63,13 +63,17 @@ export default function Login() {
                         path: '/',
                         sameSite: 'strict',
                     });
-                    toast.success(resp.data.message);
+                    toastSuccess(resp.data.message);
                     setTimeout(() => {
                         Router.push('/');
                     }, 2000);
                 })
                 .catch(error => {
-                    if (error) toast.error(error.response.data.message);
+                    if (!error.response) {
+                        toastWarn(error.message);
+                    } else {
+                        toastError(error.response.data.message);
+                    }
                 });
         }
     };
