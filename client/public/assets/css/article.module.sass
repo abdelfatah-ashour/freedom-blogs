@@ -1,80 +1,81 @@
 @import "./variables.sass"
 
 .article
-    height: 50vh
-    width: 100%
+    min-height : 250px
     overflow : hidden
-    display : flex
-    flex-direction : row
-    justify-content : space-around
-    align-items : center
     border-radius : .25rem
+    margin-bottom : 5rem
+    margin-top : 1rem
 
 .containerArticle
-    height: 85%
-    width: 100%
+    width : 100%
     display : flex
     flex-direction : row
-    flex-wrap: wrap
+    flex-wrap : wrap
     justify-content : space-between
     align-items : center
     position : relative
     border-radius : .25rem
 
 .containerImageArticle
-    height: 100%
-    width: 35%
-    position : relative
-    overflow : hidden
-    background-color : orange
+    height : 100%
+    max-height : 250px
     border-radius : .25rem
-    overflow:hidden
+    overflow : hidden
     @media (max-width: 768px)
         width: 100% !important
         height: 58% !important
     img
-        height: 100%
+        width : 100%
+        height : auto
+        display : flex
+        justify-content : center
+        object-fit : cover
+        border-radius : .25rem
+        overflow : hidden
+        &:hover
+            transform : scale(1.2)
+            transition : all .5s ease-in-out
+
+.containerContentArticle
+    display : flex
+    flex-direction : column
+    justify-content : center
+    align-items : center
+    background-color : $fourColor
+    padding : 0.5rem
+    overflow : hidden !important
+    border-radius : .25rem
+    p
+        font-size : .8rem
+        padding : 0.5rem
+
 
 .headArticle
-    position : absolute
-    bottom: 0
-    left: 0
-    right: 0
-    padding : .2rem .5rem
-    text-align : center
-    min-height : 20%
-    word-break: break-all
-    background-color : $fourColor
-    margin: 0
-    border : 2px solid #888
+    width : 100%
+    padding : .5rem
+    word-break : break-all
+    white-space : .25rem
     border-top : 0
     border-radius : .3rem
+    position: relative
+    &::before
+        content : ""
+        width : 20%
+        height : 0.25rem
+        background-color : #f3db00
+        position : absolute
+        bottom : 0
+        left : 0
+        right : 0
+        transform : translate(25%, 100%)
+        border-radius : .5rem
     @media (max-width: 768px)
         font-size : 90%
     @media (max-width: 992px)
         font-size : 95%
 
-.containerContentArticle
-    position : relative
-    width: 60%
-    height: 100%
-    display : flex
-    flex-direction : row
-    background-color : $fourColor
-    padding: 0.2rem 0.5rem
-    overflow: hidden !important
-    border-radius : .25rem
-    @media (max-width: 768px)
-        width: 100% !important
-        height: 38% !important
-    p
-        height: 75%
-        font-size : .8rem
-        text-align : center
-        margin : auto
-
 .linkSeeMore
-    position : absolute
-    bottom: 0
-    right: 0
-    transform : translateY(-100%)
+    width : 100%
+    text-align : end
+    margin : 0.5rem 0

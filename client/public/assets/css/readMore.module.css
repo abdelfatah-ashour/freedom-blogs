@@ -6,14 +6,10 @@
 
 .containerImage {
   width: 100%;
-  height: 400px;
+  max-height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -21,11 +17,13 @@
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .containerImage img {
   border-radius: .3rem;
-  height: 80%;
+  width: auto;
+  height: auto;
 }
 
 .containerInfo {
@@ -53,7 +51,6 @@
   width: 100%;
   border-bottom: 2px solid #ef8354;
   margin: 3rem 0;
-  text-align: center;
 }
 
 .containerContentArticle h3 {
@@ -65,12 +62,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   color: #ce4002;
-}
-
-.containerContentArticle p {
-  width: 75%;
-  padding: 0.5rem;
-  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .makeComment {

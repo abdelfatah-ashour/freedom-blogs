@@ -1,18 +1,17 @@
 const mongoose = require("mongoose");
 
-module.exports = function (url) {
-    try {
-        mongoose.connect(url, {
-            useCreateIndex: true,
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-            useFindAndModify: false,
-        }).then(() => {
-            console.log("connected database");
-        }).catch((error) => {
-            throw new Error(error);
-        });
-    } catch (error) {
-        throw new Error(error.message);
-    }
+module.exports = async function (url) {
+  await mongoose
+    .connect(url, {
+      useCreateIndex: true,
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useFindAndModify: false,
+    })
+    .then(() => {
+      console.log("connected to database successfully");
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
 };

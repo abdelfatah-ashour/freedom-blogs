@@ -1,4 +1,3 @@
-/* eslint-disable no-undefined */
 import {toast} from "react-toastify";
 toast.configure();
 export const toastSuccess = (message) => {

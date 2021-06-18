@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -21,5 +23,27 @@ h1 {
 .row {
   margin-right: 0 !important;
   margin-left: 0 !important;
+}
+
+.se-wrapper-inner {
+  min-height: 100% !important;
+}
+
+@media screen and (max-width: 576.5px) {
+  p {
+    font-size: .75rem;
+  }
+}
+
+@media screen and (min-width: max-w) {
+  p {
+    font-size: .75rem;
+  }
+}
+
+@media screen and (max-width: 576.5px) {
+  p {
+    font-size: .75rem;
+  }
 }
 /*# sourceMappingURL=global.css.map */

@@ -1,9 +1,11 @@
 @import "./variables.sass"
 
-*
-    margin: 0
-    padding: 0
-    box-sizing: border-box
+*,
+*::after,
+*::before
+    margin : 0
+    padding : 0
+    box-sizing : border-box
 
 body
     font-family : $fontFamilyBasic
@@ -16,5 +18,20 @@ h1
     font-family : $fontFamilyBrand!important
 
 .row
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+    margin-right : 0 !important
+    margin-left : 0 !important
+
+.se-wrapper-inner
+    min-height : 100% !important
+
+@media screen and ( max-width: 576.5px )
+    p
+        font-size : .65rem
+
+@media screen and ( min-width: 576.5px and max-width : 767.5 )
+    p
+        font-size : .75rem
+
+@media screen and ( min-width: 768 )
+    p
+        font-size : 1rem
