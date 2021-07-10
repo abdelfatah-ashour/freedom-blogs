@@ -23,28 +23,26 @@ export default function index({ articles, error }) {
       />
       <div className={Style.HomePage}>
         {/* start main heading */}
-        <div className="container">
-          {/* start News World */}
-          {articles &&
-            arrOfArticles.map((subCategory, i) => {
+        {/* start News World */}
+        {articles && (
+          <div className="container">
+            {arrOfArticles.map((subCategory, i) => {
               return (
                 <div className={Style.categoryArticle} key={i}>
                   <h3>{subCategory.title}</h3>
                   <div className={Style.containerCategory}>
-                    {articles &&
-                      articles
-                        .filter((categories) => {
-                          return categories.category === subCategory.category;
-                        })
-                        .map((article, i) => {
-                          return (
-                            <React.Fragment key={i}>
-                              <OneArticle oneArticle={article} />
-                            </React.Fragment>
-                          );
-                        })}
+                    {articles
+                      .filter((categories) => {
+                        return categories.category === subCategory.category;
+                      })
+                      .map((article, i) => {
+                        return (
+                          <React.Fragment key={i}>
+                            <OneArticle oneArticle={article} />
+                          </React.Fragment>
+                        );
+                      })}
                   </div>
-
                   <span className={Style.moreArticles}>
                     <Link href={subCategory.link}>
                       <a> ↪ more articles </a>
@@ -53,10 +51,11 @@ export default function index({ articles, error }) {
                 </div>
               );
             })}
+          </div>
+        )}
 
-          {/* error happened  server or network */}
-          {error && <Error title={error} statusCode={500} />}
-        </div>
+        {/* error happened  server or network */}
+        {error && <Error title={"something went wrong!"} statusCode={500} />}
         <Footer />
       </div>
     </>
@@ -74,22 +73,12 @@ export async function getServerSideProps() {
         },
       };
     })
-    .catch((error) => {
-      if (!error.response) {
-        return {
-          props: {
-            articles: null,
-            error: error.message,
-          },
-        };
-      } else {
-        return {
-          props: {
-            articles: null,
-            error: error.response.data.message,
-            statusCode: 400,
-          },
-        };
-      }
+    .catch(() => {
+      return {
+        props: {
+          articles: null,
+          error: true,
+        },
+      };
     });
 }

@@ -67,6 +67,8 @@ export default function Signup() {
         .catch((error) => {
           if (!error.response) {
             toastWarn(error.message);
+          } else if (error.request) {
+            toastError("something went wrong!");
           } else {
             toastError(error.response.data.message);
           }
@@ -85,14 +87,12 @@ export default function Signup() {
           className={
             Style.Register +
             " row w-100 d-flex justify-content-center align-items-center"
-          }
-        >
+          }>
           <div
             className={
               Style.ourForm +
               " d-flex flex-wrap col-lg-6 col-md-9 col-12 justify-content-center"
-            }
-          >
+            }>
             <InputFormRegister {...usernameProps} />
             <InputFormRegister {...emailProps} />
             <InputFormRegister {...passwordProps} />

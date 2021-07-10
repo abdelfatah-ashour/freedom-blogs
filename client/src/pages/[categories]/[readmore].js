@@ -9,8 +9,8 @@ import { AuthContext } from "../../Context_API/isAuth";
 import axios from "../../utilities/defaultAxios";
 import { API } from "../../utilities/KEYS.js";
 import { Socket } from "../_app";
-
-export default function ReadMore({ article, content }) {
+import Error from "next/error";
+export default function ReadMore({ article, content, error }) {
   const [count, setCount] = useState(1);
   const [allComments, setAllComments] = useState([]);
   const [moreComments, setMoreComments] = useState(null);
@@ -19,15 +19,12 @@ export default function ReadMore({ article, content }) {
   const Router = useRouter();
   const [comment, setComment] = useState("");
 
-  useEffect(() => {
-    if (article) setAllComments([...article.comments]);
-  }, []);
+  Socket.on("addedComment", (comment) => {
+    setAllComments([...allComments, { userId: username, comment }]);
+  });
 
   useEffect(() => {
-    Socket.on("addedComment", (comment) => {
-      console.log(comment);
-      setAllComments([...allComments, { userId: username, comment }]);
-    });
+    article && setAllComments([...article.comments]);
   }, []);
 
   const handleChange = (e) => {
@@ -141,45 +138,48 @@ export default function ReadMore({ article, content }) {
   return (
     <>
       <Layout title={article.headArticle} description={article.headArticle} />
-      <div className="container">
-        <main className={Style.seeMore}>
-          <section className={Style.containerImage}>
-            <Image
-              src={`${API}/${article.imageOfArticle}`}
-              alt={article.imageArticle}
-            />
-          </section>
-          {InfoAboutArticle}
-          {ContentArticle}
-          {NewComment}
-          {ListComment}
-          {moreComments ? (
-            <div className={Style.listComments}>
-              {moreComments.comments.map((OneComment, i) => {
-                return (
-                  <React.Fragment key={i}>
-                    <Comment
-                      OneComment={OneComment}
-                      articleId={article._id}
-                      onDelete={handleDeleteComment}
-                    />
-                  </React.Fragment>
-                );
-              })}
-            </div>
-          ) : null}
-          {moreComments && moreComments.length > 0 && (
-            <div className="w-100 d-flex py-4 my-4">
-              <button
-                className="btn text-center w-100"
-                onClick={handleGetMoreComments}
-              >
-                🚀 ⏳ GET more comments...
-              </button>
-            </div>
-          )}
-        </main>
-      </div>
+
+      {article && (
+        <div className="container">
+          <main className={Style.seeMore}>
+            <section className={Style.containerImage}>
+              <Image
+                src={`${API}/${article.imageOfArticle}`}
+                alt={article.imageArticle}
+              />
+            </section>
+            {content && InfoAboutArticle}
+            {content && ContentArticle}
+            {NewComment}
+            {ListComment}
+            {moreComments ? (
+              <div className={Style.listComments}>
+                {moreComments.comments.map((OneComment, i) => {
+                  return (
+                    <React.Fragment key={i}>
+                      <Comment
+                        OneComment={OneComment}
+                        articleId={article._id}
+                        onDelete={handleDeleteComment}
+                      />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+            ) : null}
+            {moreComments && moreComments.length > 0 && (
+              <div className="w-100 d-flex py-4 my-4">
+                <button
+                  className="btn text-center w-100"
+                  onClick={handleGetMoreComments}>
+                  🚀 ⏳ GET more comments...
+                </button>
+              </div>
+            )}
+          </main>
+        </div>
+      )}
+      {error && <Error title={"something went wrong!"} statusCode={500} />}
     </>
   );
 }
@@ -196,10 +196,17 @@ export async function getServerSideProps(ctx) {
         props: {
           article: data.message,
           content: `<div>${data.message.content}</div>`,
+          error: null,
         },
       };
     })
-    .catch((error) => {
-      throw new Error(error.message);
+    .catch(() => {
+      return {
+        props: {
+          article: null,
+          content: null,
+          error: true,
+        },
+      };
     });
 }

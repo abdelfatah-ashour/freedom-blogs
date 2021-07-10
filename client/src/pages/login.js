@@ -70,6 +70,8 @@ export default function Login() {
         .catch((error) => {
           if (!error.response) {
             toastWarn(error.message);
+          } else if (error.request) {
+            toastError("something went wrong!");
           } else {
             toastError(error.response.data.message);
           }
@@ -88,14 +90,12 @@ export default function Login() {
           className={
             Style.Register +
             " row w-100 d-flex justify-content-center align-items-center"
-          }
-        >
+          }>
           <div
             className={
               Style.ourForm +
               " d-flex flex-wrap col-lg-6 col-md-9 col-12 justify-content-center"
-            }
-          >
+            }>
             <InputFormRegister {...emailProps} />
             <InputFormRegister {...passwordProps} />
             <div className={Style.contentSubmit}>
